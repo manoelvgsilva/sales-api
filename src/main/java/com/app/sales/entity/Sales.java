@@ -1,14 +1,16 @@
 package com.app.sales.entity;
 
 import com.app.sales.controller.dto.ProductDto;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Objects;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.time.LocalDate;
-import java.util.List;
-import java.util.Objects;
-
+/**
+ * sales.
+ */
 @Document(collection = "sales")
 public class Sales {
 
@@ -26,6 +28,20 @@ public class Sales {
 
   public Sales() {}
 
+  /**
+   * sales.
+   *
+   * @param saleId the salesid
+   * @param saleDate the salesdate
+   * @param clientId the clientid
+   * @param listProduct the listproduct
+   * @param totalPrice the totalprice
+   * @param paymentMethod the paymentmethod
+   * @param saleStatus the salesstatus
+   * @param addressOfSend the addressofsend
+   * @param descountApply the descountapply
+   * @param tax the tax
+   */
   public Sales(ObjectId saleId, LocalDate saleDate, String clientId,
                List<ProductDto> listProduct, Double totalPrice,
                String paymentMethod,
